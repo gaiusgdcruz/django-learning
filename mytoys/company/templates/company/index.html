@@ -1,0 +1,30 @@
+{% if company_list %}
+    <h1> Company List </h1>
+    
+    <ul>
+    {% for company in company_list %}
+       <li> {{ company.company_name}} - <button> <a href = 'show/{{ company.id }}/'> Details </a> </button> <button type='button'> <a href = 'update/{{ company.id }}/'> Edit </a></button> <button type='button'> <a href = 'delete/{{ company.id }}/'> Delete </a> </button> 
+       </li> 
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Companies are available.</p>
+{% endif %}
+
+
+<button type='button'> <a href="/company/form" > Add Company </a> </button>
+
+<h1> Toy List </h1>
+
+{% if toy_list %}
+    <ul>
+    {% for toy in toy_list %}
+        <li> {{ toy.toy_name }} - {{toy.company}} - <button> <a href = 'toy/show/{{ toy.id }}/'> Details </a> </button> <button type='button'> <a href = 'toy/update/{{ toy.id }}/'> Edit </a> </button> <button type='button'> <a href = 'toy/delete/{{ toy.id }}/'> Delete </a> </button>  
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Toy available.</p>
+{% endif %}
+
+<button type='button'> <a href="/company/toy" > Add Toy </a> </button>

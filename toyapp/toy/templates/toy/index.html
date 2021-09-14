@@ -1,0 +1,42 @@
+<h1> Company List   </h1>
+{% if company_list %}
+    <ul>
+    {% for company in company_list %}
+        <li>{{ company.comp_name }} - {{company.location}} - {{company.email_id}}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Company available.</p>
+{% endif %}
+
+<h1> Toy List </h1>
+
+{% if toy_list %}
+    <ul>
+    {% for toy in toy_list %}
+        <li> {{ toy.toy_name }} - {{toy.company}}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Toy available.</p>
+{% endif %}
+
+<form method="post">
+{% csrf_token %}
+<h2> Company Form </h2>
+
+{{ cform.as_p }}
+
+<input type="submit" value="Submit" />
+</form>
+
+<form method="post">
+{% csrf_token %}
+<h2> Toy Form </h2>
+
+{{ tform.as_p }}
+
+
+
+<input type="submit" value="Submit" />
+</form>
