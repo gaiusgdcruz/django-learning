@@ -4,7 +4,7 @@ from transformers import views
 
 urlpatterns = [
     path('transformers/',
-         views.transformer_list),
+         views.transformerlist),
     path('transformers/<int:pk>/',
-         views.transformer_detail),
+         views.transformerdetail),
 ]
